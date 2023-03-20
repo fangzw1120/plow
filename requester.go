@@ -367,7 +367,8 @@ func (r *Requester) Run() {
 				}
 				resp.Reset()
 				rr := recordPool.Get().(*ReportRecord)
-				r.DoRequest(req, resp, rr)
+				//r.DoRequest(req, resp, rr)
+				r.DoDailRequest(req, resp, rr)
 				rr.readBytes = atomic.LoadInt64(&r.readBytes)
 				rr.writeBytes = atomic.LoadInt64(&r.writeBytes)
 				r.recordChan <- rr

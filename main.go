@@ -247,6 +247,7 @@ func main() {
 		contentType: *contentType,
 		host:        *host,
 	}
+	fmt.Printf("%+v", clientOpt)
 
 	requester, err := NewRequester(*concurrency, *requests, *duration, reqRate.Limit(), &clientOpt)
 	if err != nil {
